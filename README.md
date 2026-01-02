@@ -2,10 +2,10 @@
 
 A professional, government-focused volunteer registration and management system for Kumbh Mela 2027.
 
-## 🌟 Features
+## Features
 
 ### Public Volunteer Registration
-- Clean, accessible registration form (15 fields)
+- Clean, accessible registration form with 15 fields
 - Balanced information collection across 6 sections:
   - Basic Details (Name, Mobile, Email)
   - Availability (Dates & Shift Preferences)
@@ -15,7 +15,7 @@ A professional, government-focused volunteer registration and management system 
   - Consent & Agreement
 - Real-time validation
 - Mobile-responsive design
-- Professional government-appropriate UI
+- Professional government-appropriate user interface
 
 ### Admin Panel
 - Secure authentication system
@@ -26,7 +26,7 @@ A professional, government-focused volunteer registration and management system 
 - Session-based access control
 - Proper logout functionality
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+
@@ -35,13 +35,13 @@ A professional, government-focused volunteer registration and management system 
 
 ### Installation
 
-1. **Clone and install:**
+1. Clone and install:
    ```bash
    cd kumbh-admin
    npm install
    ```
 
-2. **Setup environment:**
+2. Setup environment:
    ```bash
    cp .env.example .env.local
    ```
@@ -54,24 +54,24 @@ A professional, government-focused volunteer registration and management system 
    NODE_ENV="development"
    ```
 
-3. **Initialize database:**
+3. Initialize database:
    ```bash
    npm run db:generate
    npm run db:push
    ```
 
-4. **Start development server:**
+4. Start development server:
    ```bash
    npm run dev
    ```
 
-## 📱 Application URLs
+## Application URLs
 
-- **Volunteer Registration**: http://localhost:3000/volunteer
-- **Admin Login**: http://localhost:3000/admin/login
-- **Admin Dashboard**: http://localhost:3000/admin/dashboard
+- Volunteer Registration: http://localhost:3000/volunteer
+- Admin Login: http://localhost:3000/admin/login
+- Admin Dashboard: http://localhost:3000/admin/dashboard
 
-## 📋 Volunteer Form Fields
+## Volunteer Form Fields
 
 ### Required Fields (12)
 1. Full Name
@@ -93,15 +93,15 @@ A professional, government-focused volunteer registration and management system 
 3. Emergency Contact Number
 4. Medical Condition
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
-- **Color Scheme**: Olive green (`#2d3e2e`) and earth tones
-- **No**: Blue, purple, or gradients
-- **Focus**: Performance and usability over visual effects
-- **Style**: Professional, government-appropriate, accessible
-- **UX**: Clean, intuitive, minimal friction
+- Color Scheme: Olive green (#2d3e2e) and earth tones
+- No: Blue, purple, or gradients
+- Focus: Performance and usability over visual effects
+- Style: Professional, government-appropriate, accessible
+- UX: Clean, intuitive, minimal friction
 
-## 🔒 Security Features
+## Security Features
 
 - Multi-layer authentication
 - HTTP-only session cookies
@@ -110,7 +110,7 @@ A professional, government-focused volunteer registration and management system 
 - Proper logout with session clearing
 - Environment-based credentials
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 kumbh-admin/
@@ -133,7 +133,7 @@ kumbh-admin/
     └── schema.prisma    # Database schema
 ```
 
-## 🛠️ Development
+## Development
 
 ### Available Scripts
 
@@ -155,13 +155,13 @@ npm run db:push
 npm run db:studio
 ```
 
-## 📚 Documentation
+## Documentation
 
 - [QUICK_START.md](./QUICK_START.md) - Quick setup guide
 - [ADMIN_SETUP.md](./ADMIN_SETUP.md) - Admin panel setup
 - [SECURITY.md](./SECURITY.md) - Security implementation details
 
-## 🚀 Production Deployment
+## Production Deployment
 
 1. Set environment variables
 2. Use PostgreSQL for production database
@@ -178,7 +178,7 @@ ADMIN_PASSWORD="<strong-password>"
 NODE_ENV="production"
 ```
 
-## 📞 Support
+## Support
 
 For issues or questions, refer to:
 - Database schema in `prisma/schema.prisma`
@@ -187,5 +187,5 @@ For issues or questions, refer to:
 
 ---
 
-**Built for**: Kumbh Mela 2027 Volunteer Management  
-**Focus**: Professional, accessible, high-performance government application
+Built for: Kumbh Mela 2027 Volunteer Management  
+Focus: Professional, accessible, high-performance government application
