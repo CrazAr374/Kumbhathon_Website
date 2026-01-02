@@ -117,14 +117,17 @@
 }
 
 /* === SEARCH BOX === */
-.search-box {
+.table-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
   min-width: 280px;
   flex: 1;
-  max-width: 400px;
+  max-width: 600px;
 }
 
 .search-input {
-  width: 100%;
+  flex: 1;
   padding: 8px 12px;
   border: 1px solid #c5ccc5;
   border-radius: 3px;
@@ -141,6 +144,35 @@
 
 .search-input::placeholder {
   color: #8a9a8a;
+}
+
+.export-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #4a5d4b;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s;
+}
+
+.export-button:hover:not(:disabled) {
+  background: #3d4e3e;
+}
+
+.export-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.export-button svg {
+  flex-shrink: 0;
 }
 
 /* === TABLE === */
