@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma'
 import { isAuthenticated } from '@/lib/auth'
 import AdminHeader from '@/components/AdminHeader'
 import AdminFooter from '@/components/AdminFooter'
+import AdminDashboardClient from '@/components/AdminDashboardClient'
 import VolunteerTable from '@/components/VolunteerTable'
 
 type Volunteer = {
@@ -47,7 +48,7 @@ export default async function AdminDashboard() {
     <>
       <AdminHeader />
       <main className="dashboard-main">
-        <VolunteerTable volunteers={volunteers} />
+        <AdminDashboardClient volunteers={volunteers} />
       </main>
       <AdminFooter />
     </>
