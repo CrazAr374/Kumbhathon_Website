@@ -72,49 +72,60 @@ export default function NewsSection() {
   })
 
   return (
-    <section className="py-16 bg-stone-50">
+    <section className="py-16 bg-gradient-to-b from-white to-stone-50">
       <div className="container mx-auto px-4">
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-black text-stone-900 mb-4">
+        {/* Header Section */}
+        <div className="mb-16 text-center md:text-left">
+          <div className="mb-3 inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-semibold md:mb-4">
+            Latest Updates
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black text-stone-900 mb-4 leading-tight">
             News & Alerts
-          </h2>
-          <p className="text-lg text-stone-600 max-w-2xl">
+          </h1>
+          <p className="text-xl text-stone-600 max-w-3xl">
             Stay updated with the latest news, alerts, and announcements from Kumbhathon 2027
           </p>
         </div>
 
-        {/* Filters */}
-        <div className="mb-8 flex flex-col md:flex-row gap-4">
-          <div>
-            <label className="block text-sm font-semibold text-stone-700 mb-2">
-              Filter by Category
-            </label>
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-            >
-              <option value="all">All Categories</option>
-              {categories.map(cat => (
-                <option key={cat} value={cat}>{cat}</option>
-              ))}
-            </select>
-          </div>
+        {/* Filters Section */}
+        <div className="mb-12 bg-white rounded-xl border border-stone-200 p-6 shadow-sm">
+          <h3 className="text-sm font-bold text-stone-900 uppercase tracking-wider mb-6">
+            Filter News
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Category Filter */}
+            <div>
+              <label className="block text-sm font-semibold text-stone-700 mb-3">
+                Filter by Category
+              </label>
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-3 border border-stone-300 rounded-lg bg-white text-stone-900 font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 hover:border-stone-400"
+              >
+                <option value="all">All Categories</option>
+                {categories.map(cat => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
+            </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-stone-700 mb-2">
-              Filter by Location
-            </label>
-            <select
-              value={selectedLocation}
-              onChange={(e) => setSelectedLocation(e.target.value)}
-              className="px-4 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-            >
-              <option value="all">All Locations</option>
-              {locations.map(loc => (
-                <option key={loc} value={loc}>{loc}</option>
-              ))}
-            </select>
+            {/* Location Filter */}
+            <div>
+              <label className="block text-sm font-semibold text-stone-700 mb-3">
+                Filter by Location
+              </label>
+              <select
+                value={selectedLocation}
+                onChange={(e) => setSelectedLocation(e.target.value)}
+                className="w-full px-4 py-3 border border-stone-300 rounded-lg bg-white text-stone-900 font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 hover:border-stone-400"
+              >
+                <option value="all">All Locations</option>
+                {locations.map(loc => (
+                  <option key={loc} value={loc}>{loc}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 

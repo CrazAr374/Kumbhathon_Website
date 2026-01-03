@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import SiteFooter from '@/components/SiteFooter'
 import SiteHeader from '@/components/SiteHeader'
-import NewsSection from '@/components/NewsSection'
+import NewsHeadlines from '@/components/NewsHeadlines'
 
 function FeatureCard({
   title,
@@ -244,43 +244,7 @@ export default function HomePage() {
         </section>
 
         {/* News & Alerts Section */}
-        <section id="news" className="relative bg-linear-to-b from-orange-50 via-amber-50 to-white py-20 sm:py-28">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-black text-stone-900 sm:text-4xl">
-                News & Alerts
-              </h2>
-              <p className="mt-3 text-lg text-stone-600">
-                Stay connected with the latest updates from the administration
-              </p>
-            </div>
-
-            <div className="rounded-3xl border-2 border-orange-200 bg-white p-8 shadow-lg sm:p-12">
-              <div className="flex gap-4">
-                <div className="shrink-0">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-orange-600" aria-hidden="true">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-stone-900">Important Updates Coming Soon</h3>
-                  <p className="mt-2 text-stone-700 leading-relaxed">
-                    Official announcements, volunteer schedules, safety guidelines, and event updates will be published here regularly. Check back often to stay informed and prepared for the event.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 rounded-lg bg-orange-50 border-l-4 border-orange-600">
-                <p className="text-sm font-semibold text-orange-900">
-                  💡 Tip: Subscribe to receive instant notifications for critical updates and announcements.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* News & Alerts Section */}
-        <NewsSection />
+        <NewsHeadlines />
       </main>
 
       <SiteFooter />

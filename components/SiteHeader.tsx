@@ -40,7 +40,7 @@ export default function SiteHeader() {
             <Link href="/#about" className="hover:text-orange-700">
               About us
             </Link>
-            <Link href="/#news" className="hover:text-orange-700">
+            <Link href="/news-and-alerts" className="hover:text-orange-700">
               News &amp; Alerts
             </Link>
           </nav>
@@ -102,7 +102,7 @@ export default function SiteHeader() {
                 </Link>
                 <Link
                   className="block rounded-lg px-3 py-2 font-medium hover:bg-orange-50 hover:text-orange-700 transition-colors"
-                  href="/#news"
+                  href="/news-and-alerts"
                   onClick={() => setOpen(false)}
                 >
                   News &amp; Alerts
