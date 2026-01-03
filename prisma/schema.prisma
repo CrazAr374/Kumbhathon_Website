@@ -28,3 +28,19 @@ model Volunteer {
 
   @@map("volunteers")
 }
+
+model News {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  location    String   // e.g., "Main Ghat", "North Entrance", "All Locations"
+  category    String   // e.g., "Alert", "Update", "Event", "Safety", "Registration"
+  urgency     String   // e.g., "Low", "Medium", "High", "Critical"
+  content     String   @db.Text // Full content for the news
+  author      String   // Admin who posted
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("news")
+}

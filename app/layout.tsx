@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Kumbh Mela Admin Panel',
-  description: 'Volunteer management system for Nashik Kumbh Mela',
+  title: 'Kumbh Mela 2027',
+  description: 'Official portal for Nashik Kumbh Mela 2027 volunteer registration and updates.',
 }
 
 export default function RootLayout({

@@ -1,3 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Hero background image */
+[data-bg-image="kumbh-hero"] {
+  background-image: url('/Home_bg.png');
+  background-position: center;
+}
