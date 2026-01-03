@@ -1,0 +1,208 @@
+'use client'
+
+import Link from 'next/link'
+import Image from 'next/image'
+
+export default function AboutUsSection() {
+  return (
+    <section className="bg-cover bg-center bg-fixed py-16 md:py-24 relative" style={{ backgroundImage: "url('/bg_about.png')" }}>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-white/70 md:bg-white/65"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h1 className="text-5xl md:text-6xl font-black text-stone-900 mb-3">
+            Information & Guidelines
+          </h1>
+          <p className="text-lg text-stone-600">
+            Everything you need to know about serving at the Kumbh Mela
+          </p>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Column - Main Content */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* The Spirit of Seva */}
+            <div className="bg-white rounded-xl border-2 border-orange-200 p-8 shadow-sm">
+              <h2 className="text-2xl font-black text-orange-700 mb-4">The Spirit of Seva</h2>
+              <p className="text-stone-700 leading-relaxed">
+                Volunteering at the Kumbh Mela is more than just a duty. It is an act of spiritual service and compassion. As a volunteer, you become a vital part of ensuring that every visitor has a memorable, safe, and spiritually enriching experience. Together, we ensure their safety, comfort, and spiritual experience is seamless.
+              </p>
+              <p className="text-stone-600 text-sm mt-4 italic">
+                Volunteers are the backbone of the spiritual events, bridging the gap between the administration and the devotees.
+              </p>
+            </div>
+
+            {/* Roles & Responsibilities */}
+            <div className="bg-white rounded-xl border border-stone-200 p-8 shadow-sm">
+              <h2 className="text-2xl font-black text-stone-900 mb-6">Roles & Responsibilities</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">Crowd Management</h3>
+                  <p className="text-stone-600 text-sm">
+                    Direct visitors, prevent overcrowding at ghats and temples, and ensure orderly queues during peak times.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">Information Guides</h3>
+                  <p className="text-stone-600 text-sm">
+                    Assist visitors with directions, schedules, and arrange handicap assistance to ensure comfortable navigation.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">Medical Assistance</h3>
+                  <p className="text-stone-600 text-sm">
+                    First responder support and coordinating with ambulances to ensure medical emergencies are handled efficiently.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">Sanitation Cleaners</h3>
+                  <p className="text-stone-600 text-sm">
+                    Ensuring the holy grounds remain clean and public facilities are hygienic throughout the event.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Common FAQs */}
+            <div className="bg-white rounded-xl border border-stone-200 p-8 shadow-sm">
+              <h2 className="text-2xl font-black text-stone-900 mb-6">Common FAQs</h2>
+              
+              <div className="space-y-6">
+                {/* FAQ 1 */}
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">Is accommodation provided?</h3>
+                  <p className="text-stone-600 text-sm">
+                    Yes. Basic dormitory-style accommodation and meals (Sarak Bhangi) are provided to all volunteers in designated areas. Hot meals, water, and rest facilities are available throughout your shift.
+                  </p>
+                </div>
+
+                {/* FAQ 2 */}
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">What is the minimum age?</h3>
+                  <p className="text-stone-600 text-sm">
+                    Volunteers must be at least 18 years of age. Special youth batches (17+) are available with parental consent.
+                  </p>
+                </div>
+
+                {/* FAQ 3 */}
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">Will I get a certificate?</h3>
+                  <p className="text-stone-600 text-sm">
+                    Yes. All volunteers that assigned leisure will receive an official certificate of service recognizing your contribution to the Mela.
+                  </p>
+                </div>
+
+                {/* FAQ 4 */}
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">What about safety and health?</h3>
+                  <p className="text-stone-600 text-sm">
+                    Comprehensive safety training is provided before your shift. Medical teams, first aid stations, and 24/7 support are available. All volunteers receive health insurance coverage during their service.
+                  </p>
+                </div>
+
+                {/* FAQ 5 */}
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-2">Can I volunteer for multiple days?</h3>
+                  <p className="text-stone-600 text-sm">
+                    Absolutely! You can volunteer for as many days as your schedule allows. Shifts can be customized from 4 hours to full-day commitments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Sidebar */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* Join the Force CTA */}
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-300 p-8 shadow-md text-center">
+              <h3 className="text-xl font-black text-orange-900 mb-3">Join the Force</h3>
+              <p className="text-sm text-orange-800 mb-6 leading-relaxed">
+                Applications are closing soon. Secure your spot and volunteer today!
+              </p>
+              <Link
+                href="/volunteer"
+                className="inline-block w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
+                Register Now
+              </Link>
+            </div>
+
+            {/* Emergency Contacts */}
+            <div className="bg-white rounded-xl border border-stone-200 p-8 shadow-sm">
+              <h3 className="text-lg font-black text-stone-900 mb-6">Emergency Contacts</h3>
+              
+              <div className="space-y-5">
+                <div>
+                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Police Control</p>
+                  <p className="text-3xl font-black text-orange-600">100</p>
+                </div>
+
+                <div className="border-t border-stone-200 pt-5">
+                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Ambulance</p>
+                  <p className="text-3xl font-black text-orange-600">108</p>
+                </div>
+
+                <div className="border-t border-stone-200 pt-5">
+                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Fire</p>
+                  <p className="text-3xl font-black text-orange-600">101</p>
+                </div>
+
+                <div className="border-t border-stone-200 pt-5">
+                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Helpline</p>
+                  <p className="text-lg font-bold text-stone-900">+91 (123) 456-7890</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Tips */}
+            <div className="bg-blue-50 rounded-xl border border-blue-200 p-6 shadow-sm">
+              <h3 className="text-lg font-black text-blue-900 mb-4">Quick Tips</h3>
+              <ul className="space-y-3 text-sm text-blue-800">
+                <li className="flex gap-2">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>Arrive 30 mins before your shift</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>Wear comfortable shoes and light clothing</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>Carry water and stay hydrated</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>Follow safety guidelines strictly</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>Ask supervisors for clarification</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom CTA Section */}
+        <div className="mt-16 bg-gradient-to-r from-orange-600 to-orange-500 rounded-xl p-10 text-center text-white shadow-lg">
+          <h2 className="text-3xl font-black mb-3">Ready to Make a Difference?</h2>
+          <p className="text-lg mb-6 opacity-95">
+            Join thousands of volunteers in serving at the Kumbh Mela 2027
+          </p>
+          <Link
+            href="/volunteer"
+            className="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded-lg hover:bg-orange-50 transition-colors duration-200"
+          >
+            Volunteer Now
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}

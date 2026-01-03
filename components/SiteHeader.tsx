@@ -1,6 +1,7 @@
 "use client"
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 export default function SiteHeader() {
@@ -27,17 +28,20 @@ export default function SiteHeader() {
       <header className="sticky top-0 z-50 border-b border-amber-200/20 bg-black/30 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link href="/" className="flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white">
-              <span className="text-sm font-semibold">ॐ</span>
-            </span>
-            <span className="text-sm font-semibold tracking-wide text-orange-700">KUMBH SEWA</span>
+            <Image
+              src="/image.png"
+              alt="Kumbhathon Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm text-stone-700 sm:flex">
-            <Link href="/#home" className="hover:text-orange-700">
+            <Link href="/" className="hover:text-orange-700">
               Home
             </Link>
-            <Link href="/#about" className="hover:text-orange-700">
+            <Link href="/about-us" className="hover:text-orange-700">
               About us
             </Link>
             <Link href="/news-and-alerts" className="hover:text-orange-700">
@@ -88,14 +92,14 @@ export default function SiteHeader() {
               <div className="space-y-1 text-sm text-stone-700">
                 <Link
                   className="block rounded-lg px-3 py-2 font-medium hover:bg-orange-50 hover:text-orange-700 transition-colors"
-                  href="/#home"
+                  href="/"
                   onClick={() => setOpen(false)}
                 >
                   Home
                 </Link>
                 <Link
                   className="block rounded-lg px-3 py-2 font-medium hover:bg-orange-50 hover:text-orange-700 transition-colors"
-                  href="/#about"
+                  href="/about-us"
                   onClick={() => setOpen(false)}
                 >
                   About us
