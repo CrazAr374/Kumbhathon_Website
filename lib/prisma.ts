@@ -5,8 +5,8 @@ const globalForPrisma = globalThis as unknown as {
 }
 
 // Get database URL from multiple possible environment variables
-const getDatabaseUrl = (): string => {
-  // Try primary DATABASE_URL first (Prisma Accelerate)
+const getDatabaseUrl = (): string | undefined => {
+  // Try primary DATABASE_URL first
   if (process.env.DATABASE_URL) {
     return process.env.DATABASE_URL
   }
@@ -21,11 +21,14 @@ const getDatabaseUrl = (): string => {
     return process.env.Database_POSTGRES_URL
   }
   
-  throw new Error('No DATABASE_URL configured. Please set one of: DATABASE_URL, Database_PRISMA_DATABASE_URL, or Database_POSTGRES_URL')
+  return undefined
 }
 
-// Override DATABASE_URL at runtime for Prisma to use
-process.env.DATABASE_URL = getDatabaseUrl()
+// Set DATABASE_URL for Prisma from available sources
+const dbUrl = getDatabaseUrl()
+if (dbUrl) {
+  process.env.DATABASE_URL = dbUrl
+}
 
 export const prisma = globalForPrisma.prisma ?? new PrismaClient()
 
