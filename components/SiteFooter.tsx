@@ -39,10 +39,20 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <div className="text-sm font-semibold tracking-wide text-amber-50/90">Contact</div>
+            <div className="text-sm font-semibold tracking-wide text-amber-50/90">Contact Details</div>
             <div className="mt-3 space-y-2 text-sm text-amber-50/80">
-              <div>help@kumbhnashik.gov.in</div>
-              <div>+91 123 456 7890</div>
+              <div>
+                <div className="font-semibold text-amber-50/90">Phone</div>
+                <div>0253-2461909</div>
+              </div>
+              <div>
+                <div className="font-semibold text-amber-50/90">Email</div>
+                <div>kumbhmela.2027@mah.gov.in</div>
+              </div>
+              <div>
+                <div className="font-semibold text-amber-50/90">Address</div>
+                <div className="text-xs">Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA)<br/>Office of the Divisional Commissioner, Nashik Division<br/>Nashik Road, Nashik, Maharashtra.</div>
+              </div>
             </div>
           </div>
         </div>

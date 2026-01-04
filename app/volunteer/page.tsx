@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import SiteHeader from '@/components/SiteHeader'
+import SiteFooter from '@/components/SiteFooter'
 import './volunteer.css'
 
 export default function VolunteerRegistration() {
@@ -89,15 +91,16 @@ export default function VolunteerRegistration() {
 
   return (
     <div className="volunteer-page">
-      <header className="volunteer-header">
-        <div className="header-content">
-          <div className="header-badge">Official Registration Portal</div>
-          <h1>Kumbh Mela 2027</h1>
-          <p>Volunteer Registration Form</p>
+      <SiteHeader />
+      
+      <div className="volunteer-hero" style={{ backgroundImage: "url('/Home_bg.png')" }}>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1>Volunteer Registration</h1>
         </div>
-      </header>
+      </div>
 
-      <main className="volunteer-main">
+      <main className="volunteer-main" style={{ backgroundImage: "url('/Home_bg.png')" }}>
         <div className="form-container">
           {success && (
             <div className="success-alert">
@@ -371,9 +374,7 @@ export default function VolunteerRegistration() {
         </div>
       </main>
 
-      <footer className="volunteer-footer">
-        <p>© 2027 Kumbh Mela Management System</p>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
