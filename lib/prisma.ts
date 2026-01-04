@@ -6,7 +6,12 @@ const globalForPrisma = globalThis as unknown as {
 
 // Get database URL from multiple possible environment variables
 const getDatabaseUrl = (): string | undefined => {
-  // Try primary DATABASE_URL first
+  // Try Database_DATABASE_URL first
+  if (process.env.Database_DATABASE_URL) {
+    return process.env.Database_DATABASE_URL
+  }
+  
+  // Fall back to primary DATABASE_URL
   if (process.env.DATABASE_URL) {
     return process.env.DATABASE_URL
   }
