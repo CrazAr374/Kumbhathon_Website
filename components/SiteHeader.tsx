@@ -47,6 +47,9 @@ export default function SiteHeader() {
             <Link href="/news-and-alerts" className="hover:text-orange-700">
               News &amp; Alerts
             </Link>
+            <Link href="/authorities" className="hover:text-orange-700">
+              Authorities
+            </Link>
           </nav>
 
           {/* Desktop CTA */}
@@ -110,6 +113,13 @@ export default function SiteHeader() {
                   onClick={() => setOpen(false)}
                 >
                   News &amp; Alerts
+                </Link>
+                <Link
+                  className="block rounded-lg px-3 py-2 font-medium hover:bg-orange-50 hover:text-orange-700 transition-colors"
+                  href="/authorities"
+                  onClick={() => setOpen(false)}
+                >
+                  Authorities
                 </Link>
               </div>
 
