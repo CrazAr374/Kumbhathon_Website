@@ -2,20 +2,20 @@
 
 A professional, government-focused volunteer registration and management system for Kumbh Mela 2027, developed for the Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA).
 
-## 🎯 Overview
+## Overview
 
 This is a comprehensive web application that manages volunteer registration, displays authority information, and provides news/alert management for the Kumbh Mela 2027 event. The system features a public-facing website with volunteer registration and an admin dashboard for managing volunteers and news.
 
-## ✨ Key Features
+## Key Features
 
-### 📱 Public Website
+### Public Website
 
 #### Pages
-- **Home** (`/`) - Hero section with call-to-action
-- **Volunteer Registration** (`/volunteer`) - Beautiful form matching website design with background image
-- **About Us / Guidelines** (`/about-us`) - Information and FAQs
-- **News & Alerts** (`/news-and-alerts`) - Latest updates and announcements
-- **Authorities** (`/authorities`) - List of 22 NTKMA members with roles and designations
+- Home (/) - Hero section with call-to-action
+- Volunteer Registration (/volunteer) - Beautiful form matching website design with background image
+- About Us / Guidelines (/about-us) - Information and FAQs
+- News & Alerts (/news-and-alerts) - Latest updates and announcements
+- Authorities (/authorities) - List of 22 NTKMA members with roles and designations
 
 #### Navigation
 - Desktop: Horizontal navigation with 5 links
@@ -24,8 +24,8 @@ This is a comprehensive web application that manages volunteer registration, dis
 - Sticky header with transparent background
 - Responsive design across all device sizes
 
-### 📝 Volunteer Registration Form
-- **6 Form Sections**:
+### Volunteer Registration Form
+- 6 Form Sections:
   1. Basic Details (Name, Email, Mobile)
   2. Availability (Dates, Preferred Shift)
   3. Skills & Preferences (Skills, Role, Languages)
@@ -38,33 +38,33 @@ This is a comprehensive web application that manages volunteer registration, dis
 - Full-width background image with semi-transparent overlay
 - Orange accent color matching website theme
 
-### 👥 Authorities Page
+### Authorities Page
 - Professional member directory with 22 NTKMA members
 - Desktop: Clean table layout with columns for serial #, role, and designation
 - Mobile: Connected list with dividers (no gaps between items)
 - Color-coded member types:
-  - 🟠 Orange: Chairperson (1)
-  - 🟡 Amber: Vice-Chairpersons (2)
-  - 🔵 Blue: Member-Secretary (1)
-  - ⚫ Gray: Ex-officio Members (18)
+  - Orange: Chairperson (1)
+  - Amber: Vice-Chairpersons (2)
+  - Blue: Member-Secretary (1)
+  - Gray: Ex-officio Members (18)
 - Summary statistics showing member breakdown
 - Fully responsive across all screen sizes
 
-### 🛡️ Admin Dashboard
+### Admin Dashboard
 
-#### Admin Login (`/admin/login`)
+#### Admin Login (/admin/login)
 - Secure authentication system
 - Session-based access control
 - Proper logout functionality
 
-#### Admin Dashboard (`/admin/dashboard`)
+#### Admin Dashboard (/admin/dashboard)
 - View all registered volunteers
-- **Search functionality** for quick lookup
-- **Export to CSV** for data analysis
+- Search functionality for quick lookup
+- Export to CSV for data analysis
 - Sortable data table
 - Volunteer information display
 
-#### News Management (`/admin/news`)
+#### News Management (/admin/news)
 - Create new news/alerts
 - News form fields:
   - Title, Description, Location
@@ -74,26 +74,26 @@ This is a comprehensive web application that manages volunteer registration, dis
 - Delete confirmation dialog
 - Real-time updates
 
-### 📍 Contact Information
-**Updated Contact Details:**
-- **Phone**: 0253-2461909
-- **Email**: kumbhmela.2027@mah.gov.in
-- **Address**: Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA), Office of the Divisional Commissioner, Nashik Division, Nashik Road, Nashik, Maharashtra
+### Contact Information
+Updated Contact Details:
+- Phone: 0253-2461909
+- Email: kumbhmela.2027@mah.gov.in
+- Address: Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA), Office of the Divisional Commissioner, Nashik Division, Nashik Road, Nashik, Maharashtra
 
-**Emergency Services:**
+Emergency Services:
 - Police: 100
 - Ambulance: 108
 - Fire: 101
 
-## 🏗️ Architecture
+## Architecture
 
 ### Tech Stack
-- **Framework**: Next.js 16+ (Turbopack)
-- **Styling**: Tailwind CSS
-- **Database**: Prisma ORM
-- **Authentication**: Custom session-based
-- **Language**: TypeScript
-- **API**: Next.js API Routes
+- Framework: Next.js 16+ (Turbopack)
+- Styling: Tailwind CSS
+- Database: Prisma ORM
+- Authentication: Custom session-based
+- Language: TypeScript
+- API: Next.js API Routes
 
 ### Project Structure
 
@@ -142,37 +142,37 @@ kumbh-admin/
     └── image.png
 ```
 
-## 🎨 Design Features
+## Design Features
 
 ### Volunteer Form UI
-- **Hero Section**: Full-width background image with 50% white overlay
-- **Form Container**: Centered white card (600px max) with rounded corners and shadow
-- **Responsive Breakpoints**:
+- Hero Section: Full-width background image with 50% white overlay
+- Form Container: Centered white card (600px max) with rounded corners and shadow
+- Responsive Breakpoints:
   - Desktop (>768px): 600px width, 2-column grid
   - Tablet (480-768px): Full width minus padding, 2-column grid
   - Mobile (<480px): Full width, 1-column grid
-- **Color Scheme**: 
+- Color Scheme: 
   - Primary: Orange (#dc5f3c)
   - Border: Brown (#d4af8f)
   - Text: Dark gray (#333)
   - Focus: Orange with light background
 
 ### Authority Members List
-- **Desktop (lg+ screens)**: Professional table with sticky headers
-- **Tablet/Mobile (< lg)**: Connected list with:
+- Desktop (lg+ screens): Professional table with sticky headers
+- Tablet/Mobile (< lg): Connected list with:
   - Serial numbers in circles
   - Color-coded badges for roles
   - No gaps between items
   - Hover effects for interactivity
-- **Responsive Typography**: Font sizes scale with screen size
-- **Accessibility**: Proper semantic HTML, color contrast
+- Responsive Typography: Font sizes scale with screen size
+- Accessibility: Proper semantic HTML, color contrast
 
-## 🐛 Bug Fixes & Improvements
+## Bug Fixes and Improvements
 
 ### Fixed: News Delete Functionality
-**Problem**: "Failed to delete news" error in admin panel
-**Root Cause**: Next.js 16+ requires params as Promise in route handlers
-**Solution**:
+Problem: "Failed to delete news" error in admin panel
+Root Cause: Next.js 16+ requires params as Promise in route handlers
+Solution:
 ```typescript
 // Updated /api/admin/news/[id]/route.ts
 
@@ -185,16 +185,16 @@ const { id } = await params
 ```
 
 ### Improvements Made
-1. ✅ Volunteer form UI redesigned with background image
-2. ✅ Added header and footer to volunteer page
-3. ✅ Made form responsive across all screen sizes
-4. ✅ Updated contact information everywhere (footer, about, authorities)
-5. ✅ Added new "Authorities" page to navigation
-6. ✅ Created comprehensive authorities list component
-7. ✅ Fixed async params issue in news delete route
-8. ✅ Improved mobile list responsiveness (connected items, no gaps)
+- Volunteer form UI redesigned with background image
+- Added header and footer to volunteer page
+- Made form responsive across all screen sizes
+- Updated contact information everywhere (footer, about, authorities)
+- Added new "Authorities" page to navigation
+- Created comprehensive authorities list component
+- Fixed async params issue in news delete route
+- Improved mobile list responsiveness (connected items, no gaps)
 
-## 📋 Database Schema
+## Database Schema
 
 ### Volunteer Model
 ```prisma
@@ -234,7 +234,7 @@ model News {
 }
 ```
 
-## 🔐 Security Features
+## Security Features
 
 - Multi-layer authentication
 - HTTP-only session cookies
@@ -243,7 +243,7 @@ model News {
 - Proper logout with session clearing
 - Environment-based credentials
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+
@@ -282,34 +282,34 @@ Access the application:
 
 ### Available Scripts
 
-- `npm run dev` - Development server
-- `npm run build` - Production build
-- `npm start` - Production server
+- npm run dev - Development server
+- npm run build - Production build
+- npm start - Production server
 
-## 📱 Responsive Design
+## Responsive Design
 
 All pages are fully responsive:
-- **Mobile** (<480px): Optimized vertical layout
-- **Tablet** (480-768px): Improved 2-column grids
-- **Desktop** (>768px): Full-width with enhanced spacing
+- Mobile (<480px): Optimized vertical layout
+- Tablet (480-768px): Improved 2-column grids
+- Desktop (>768px): Full-width with enhanced spacing
 
-## 📞 Contact & Support
+## Contact and Support
 
-**NTKMA Contact Information:**
+NTKMA Contact Information:
 - Phone: 0253-2461909
 - Email: kumbhmela.2027@mah.gov.in
 - Address: Office of the Divisional Commissioner, Nashik Division, Nashik Road, Nashik, Maharashtra
 
-**Emergency Services:**
+Emergency Services:
 - Police: 100
 - Ambulance: 108
 - Fire: 101
 
-## 📄 License
+## License
 
 Developed for Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Nashik–Trimbakeshwar Kumbh Mela Authority
 - Office of the Divisional Commissioner, Nashik Division
@@ -317,9 +317,9 @@ Developed for Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA)
 
 ---
 
-**Latest Update**: January 4, 2026
-- ✅ Volunteer form UI improvement
-- ✅ New Authorities page with member directory
-- ✅ Updated contact information
-- ✅ Fixed news delete bug
-- ✅ Improved mobile responsiveness
+Latest Update: January 4, 2026
+- Volunteer form UI improvement
+- New Authorities page with member directory
+- Updated contact information
+- Fixed news delete bug
+- Improved mobile responsiveness
