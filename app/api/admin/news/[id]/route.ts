@@ -5,7 +5,7 @@ import { isAuthenticated } from '@/lib/auth'
 // DELETE a news item
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const authenticated = await isAuthenticated()
@@ -16,7 +16,7 @@ export async function DELETE(
       )
     }
 
-    const { id } = params
+    const { id } = await params
 
     const deletedNews = await prisma.news.delete({
       where: { id }
@@ -38,7 +38,7 @@ export async function DELETE(
 // GET single news item
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const authenticated = await isAuthenticated()
@@ -49,7 +49,7 @@ export async function GET(
       )
     }
 
-    const { id } = params
+    const { id } = await params
 
     const news = await prisma.news.findUnique({
       where: { id }

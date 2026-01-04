@@ -135,27 +135,48 @@ export default function AboutUsSection() {
 
             {/* Emergency Contacts */}
             <div className="bg-white rounded-xl border border-stone-200 p-8 shadow-sm">
-              <h3 className="text-lg font-black text-stone-900 mb-6">Emergency Contacts</h3>
+              <h3 className="text-lg font-black text-stone-900 mb-6">Contact Details</h3>
               
               <div className="space-y-5">
                 <div>
-                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Police Control</p>
-                  <p className="text-3xl font-black text-orange-600">100</p>
+                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Phone</p>
+                  <p className="text-lg font-bold text-stone-900">0253-2461909</p>
                 </div>
 
                 <div className="border-t border-stone-200 pt-5">
-                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Ambulance</p>
-                  <p className="text-3xl font-black text-orange-600">108</p>
+                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Email</p>
+                  <p className="text-sm font-bold text-stone-900">kumbhmela.2027@mah.gov.in</p>
                 </div>
 
                 <div className="border-t border-stone-200 pt-5">
-                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Fire</p>
-                  <p className="text-3xl font-black text-orange-600">101</p>
+                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-2">Address</p>
+                  <p className="text-sm text-stone-700 leading-relaxed">
+                    Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA)<br/>
+                    Office of the Divisional Commissioner, Nashik Division<br/>
+                    Nashik Road, Nashik, Maharashtra.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Emergency Contacts */}
+            <div className="bg-red-50 rounded-xl border border-red-200 p-8 shadow-sm">
+              <h3 className="text-lg font-black text-red-900 mb-6">Emergency Contacts</h3>
+              
+              <div className="space-y-5">
+                <div>
+                  <p className="text-xs font-bold text-red-600 uppercase tracking-wide mb-1">Police Control</p>
+                  <p className="text-3xl font-black text-red-600">100</p>
                 </div>
 
-                <div className="border-t border-stone-200 pt-5">
-                  <p className="text-xs font-bold text-stone-600 uppercase tracking-wide mb-1">Helpline</p>
-                  <p className="text-lg font-bold text-stone-900">+91 (123) 456-7890</p>
+                <div className="border-t border-red-200 pt-5">
+                  <p className="text-xs font-bold text-red-600 uppercase tracking-wide mb-1">Ambulance</p>
+                  <p className="text-3xl font-black text-red-600">108</p>
+                </div>
+
+                <div className="border-t border-red-200 pt-5">
+                  <p className="text-xs font-bold text-red-600 uppercase tracking-wide mb-1">Fire</p>
+                  <p className="text-3xl font-black text-red-600">101</p>
                 </div>
               </div>
             </div>
