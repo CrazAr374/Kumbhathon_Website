@@ -1,191 +1,325 @@
 # Kumbh Mela 2027 - Volunteer Management System
 
-A professional, government-focused volunteer registration and management system for Kumbh Mela 2027.
+A professional, government-focused volunteer registration and management system for Kumbh Mela 2027, developed for the Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA).
 
-## Features
+## 🎯 Overview
 
-### Public Volunteer Registration
-- Clean, accessible registration form with 15 fields
-- Balanced information collection across 6 sections:
-  - Basic Details (Name, Mobile, Email)
-  - Availability (Dates & Shift Preferences)
-  - Skills & Preferences (Skills, Role, Languages)
-  - Local Context (Nashik residency, Area)
-  - Safety Information (Emergency contact, Medical conditions)
-  - Consent & Agreement
-- Real-time validation
-- Mobile-responsive design
-- Professional government-appropriate user interface
+This is a comprehensive web application that manages volunteer registration, displays authority information, and provides news/alert management for the Kumbh Mela 2027 event. The system features a public-facing website with volunteer registration and an admin dashboard for managing volunteers and news.
 
-### Admin Panel
+## ✨ Key Features
+
+### 📱 Public Website
+
+#### Pages
+- **Home** (`/`) - Hero section with call-to-action
+- **Volunteer Registration** (`/volunteer`) - Beautiful form matching website design with background image
+- **About Us / Guidelines** (`/about-us`) - Information and FAQs
+- **News & Alerts** (`/news-and-alerts`) - Latest updates and announcements
+- **Authorities** (`/authorities`) - List of 22 NTKMA members with roles and designations
+
+#### Navigation
+- Desktop: Horizontal navigation with 5 links
+  - Home | About us | News & Alerts | Authorities | Volunteer Now (CTA)
+- Mobile: Hamburger menu with slide-down panel
+- Sticky header with transparent background
+- Responsive design across all device sizes
+
+### 📝 Volunteer Registration Form
+- **6 Form Sections**:
+  1. Basic Details (Name, Email, Mobile)
+  2. Availability (Dates, Preferred Shift)
+  3. Skills & Preferences (Skills, Role, Languages)
+  4. Local Context (Residency, Area)
+  5. Safety (Emergency Contacts, Medical Info)
+  6. Consent Agreement
+- Real-time validation and error handling
+- Success/error notifications with smooth animations
+- Mobile-optimized with large touch targets
+- Full-width background image with semi-transparent overlay
+- Orange accent color matching website theme
+
+### 👥 Authorities Page
+- Professional member directory with 22 NTKMA members
+- Desktop: Clean table layout with columns for serial #, role, and designation
+- Mobile: Connected list with dividers (no gaps between items)
+- Color-coded member types:
+  - 🟠 Orange: Chairperson (1)
+  - 🟡 Amber: Vice-Chairpersons (2)
+  - 🔵 Blue: Member-Secretary (1)
+  - ⚫ Gray: Ex-officio Members (18)
+- Summary statistics showing member breakdown
+- Fully responsive across all screen sizes
+
+### 🛡️ Admin Dashboard
+
+#### Admin Login (`/admin/login`)
 - Secure authentication system
-- Searchable volunteer database
-- Clean data table with filtering
-- Professional olive green color scheme
-- Minimal, performance-focused design
 - Session-based access control
 - Proper logout functionality
 
-## Quick Start
+#### Admin Dashboard (`/admin/dashboard`)
+- View all registered volunteers
+- **Search functionality** for quick lookup
+- **Export to CSV** for data analysis
+- Sortable data table
+- Volunteer information display
 
-### Prerequisites
-- Node.js 18+
-- Database (SQLite/PostgreSQL)
-- npm or yarn
+#### News Management (`/admin/news`)
+- Create new news/alerts
+- News form fields:
+  - Title, Description, Location
+  - Category, Urgency Level
+  - Detailed Content, Author
+- Edit and delete news items
+- Delete confirmation dialog
+- Real-time updates
 
-### Installation
+### 📍 Contact Information
+**Updated Contact Details:**
+- **Phone**: 0253-2461909
+- **Email**: kumbhmela.2027@mah.gov.in
+- **Address**: Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA), Office of the Divisional Commissioner, Nashik Division, Nashik Road, Nashik, Maharashtra
 
-1. Clone and install:
-   ```bash
-   cd kumbh-admin
-   npm install
-   ```
+**Emergency Services:**
+- Police: 100
+- Ambulance: 108
+- Fire: 101
 
-2. Setup environment:
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Edit `.env.local`:
-   ```env
-   DATABASE_URL="file:./dev.db"
-   ADMIN_USERNAME="admin"
-   ADMIN_PASSWORD="your_secure_password"
-   NODE_ENV="development"
-   ```
+## 🏗️ Architecture
 
-3. Initialize database:
-   ```bash
-   npm run db:generate
-   npm run db:push
-   ```
+### Tech Stack
+- **Framework**: Next.js 16+ (Turbopack)
+- **Styling**: Tailwind CSS
+- **Database**: Prisma ORM
+- **Authentication**: Custom session-based
+- **Language**: TypeScript
+- **API**: Next.js API Routes
 
-4. Start development server:
-   ```bash
-   npm run dev
-   ```
-
-## Application URLs
-
-- Volunteer Registration: http://localhost:3000/volunteer
-- Admin Login: http://localhost:3000/admin/login
-- Admin Dashboard: http://localhost:3000/admin/dashboard
-
-## Volunteer Form Fields
-
-### Required Fields (12)
-1. Full Name
-2. Mobile Number
-3. Email
-4. Available From (Date)
-5. Available To (Date)
-6. Preferred Shift
-7. Skills / Background
-8. Preferred Role
-9. Languages Known
-10. Local Resident (Yes/No)
-11. Consent Checkbox
-12. (Dates count as 2 fields)
-
-### Optional Fields (3)
-1. Area (Locality)
-2. Emergency Contact Name
-3. Emergency Contact Number
-4. Medical Condition
-
-## Design Philosophy
-
-- Color Scheme: Olive green (#2d3e2e) and earth tones
-- No: Blue, purple, or gradients
-- Focus: Performance and usability over visual effects
-- Style: Professional, government-appropriate, accessible
-- UX: Clean, intuitive, minimal friction
-
-## Security Features
-
-- Multi-layer authentication
-- HTTP-only session cookies
-- Server-side validation
-- Protected routes via middleware
-- Proper logout with session clearing
-- Environment-based credentials
-
-## Project Structure
+### Project Structure
 
 ```
 kumbh-admin/
 ├── app/
-│   ├── volunteer/        # Public registration form
-│   ├── admin/            # Admin panel
-│   │   ├── login/        # Admin login
-│   │   └── dashboard/    # Volunteer management
-│   └── api/
-│       ├── volunteers/   # Registration API
-│       └── admin/        # Admin authentication APIs
+│   ├── page.tsx                 # Home page
+│   ├── about-us/
+│   │   └── page.tsx
+│   ├── authorities/
+│   │   └── page.tsx             # NEW: Authorities page
+│   ├── volunteer/
+│   │   ├── page.tsx             # Improved UI
+│   │   └── volunteer.css        # Updated styling
+│   ├── news-and-alerts/
+│   │   └── page.tsx
+│   ├── admin/
+│   │   ├── login/
+│   │   ├── dashboard/
+│   │   └── news/
+│   ├── api/
+│   │   ├── admin/
+│   │   │   ├── news/
+│   │   │   │   └── [id]/
+│   │   │   │       └── route.ts # FIXED: Async params
+│   │   │   └── ...
+│   │   └── volunteers/
+│   ├── layout.tsx
+│   └── globals.css
 ├── components/
-│   ├── AdminHeader.tsx
-│   ├── AdminFooter.tsx
-│   └── VolunteerTable.tsx
+│   ├── SiteHeader.tsx           # Updated nav
+│   ├── SiteFooter.tsx           # Updated contacts
+│   ├── AuthoritiesSection.tsx   # NEW component
+│   ├── AboutUsSection.tsx       # Updated contacts
+│   ├── NewsSection.tsx
+│   ├── VolunteerTable.tsx
+│   └── ...
 ├── lib/
-│   ├── auth.ts          # Authentication logic
-│   └── prisma.ts        # Database client
-└── prisma/
-    └── schema.prisma    # Database schema
+│   ├── auth.ts
+│   └── prisma.ts
+├── prisma/
+│   └── schema.prisma
+└── public/
+    ├── Home_bg.png
+    ├── bg_about.png
+    └── image.png
 ```
 
-## Development
+## 🎨 Design Features
+
+### Volunteer Form UI
+- **Hero Section**: Full-width background image with 50% white overlay
+- **Form Container**: Centered white card (600px max) with rounded corners and shadow
+- **Responsive Breakpoints**:
+  - Desktop (>768px): 600px width, 2-column grid
+  - Tablet (480-768px): Full width minus padding, 2-column grid
+  - Mobile (<480px): Full width, 1-column grid
+- **Color Scheme**: 
+  - Primary: Orange (#dc5f3c)
+  - Border: Brown (#d4af8f)
+  - Text: Dark gray (#333)
+  - Focus: Orange with light background
+
+### Authority Members List
+- **Desktop (lg+ screens)**: Professional table with sticky headers
+- **Tablet/Mobile (< lg)**: Connected list with:
+  - Serial numbers in circles
+  - Color-coded badges for roles
+  - No gaps between items
+  - Hover effects for interactivity
+- **Responsive Typography**: Font sizes scale with screen size
+- **Accessibility**: Proper semantic HTML, color contrast
+
+## 🐛 Bug Fixes & Improvements
+
+### Fixed: News Delete Functionality
+**Problem**: "Failed to delete news" error in admin panel
+**Root Cause**: Next.js 16+ requires params as Promise in route handlers
+**Solution**:
+```typescript
+// Updated /api/admin/news/[id]/route.ts
+
+// Before (Next.js <15)
+export async function DELETE(request, { params }: { params: { id: string } })
+
+// After (Next.js 16+)
+export async function DELETE(request, { params }: { params: Promise<{ id: string }> })
+const { id } = await params
+```
+
+### Improvements Made
+1. ✅ Volunteer form UI redesigned with background image
+2. ✅ Added header and footer to volunteer page
+3. ✅ Made form responsive across all screen sizes
+4. ✅ Updated contact information everywhere (footer, about, authorities)
+5. ✅ Added new "Authorities" page to navigation
+6. ✅ Created comprehensive authorities list component
+7. ✅ Fixed async params issue in news delete route
+8. ✅ Improved mobile list responsiveness (connected items, no gaps)
+
+## 📋 Database Schema
+
+### Volunteer Model
+```prisma
+model Volunteer {
+  id                      String   @id @default(cuid())
+  fullName                String
+  email                   String
+  mobileNumber            String
+  availableFrom           String
+  availableTo             String
+  preferredShift          String
+  skills                  String
+  preferredRole           String
+  languagesKnown          String
+  isLocalResident         Boolean
+  area                    String?
+  emergencyContactName    String?
+  emergencyContactNumber  String?
+  medicalCondition        String?
+  consentGiven            Boolean
+  createdAt               DateTime @default(now())
+}
+```
+
+### News Model
+```prisma
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  location    String
+  category    String
+  urgency     String
+  content     String
+  author      String
+  createdAt   DateTime @default(now())
+}
+```
+
+## 🔐 Security Features
+
+- Multi-layer authentication
+- HTTP-only session cookies
+- Server-side validation
+- Protected admin routes
+- Proper logout with session clearing
+- Environment-based credentials
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- SQLite or PostgreSQL
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/CrazAr374/Kumbhathon_Website.git
+cd kumbh-admin
+
+# Install dependencies
+npm install
+
+# Setup environment
+cp .env.example .env.local
+
+# Configure database in .env.local
+DATABASE_URL="file:./dev.db"
+NEXTAUTH_SECRET="your-secret-key"
+
+# Setup database
+npx prisma migrate dev
+npx prisma generate
+
+# Run development server
+npm run dev
+```
+
+Access the application:
+- Website: http://localhost:3000
+- Volunteer Form: http://localhost:3000/volunteer
+- Admin Login: http://localhost:3000/admin/login
 
 ### Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run db:generate` - Generate Prisma client
-- `npm run db:push` - Push schema to database
-- `npm run db:studio` - Open Prisma Studio
+- `npm run dev` - Development server
+- `npm run build` - Production build
+- `npm start` - Production server
 
-### Database Management
+## 📱 Responsive Design
 
-```bash
-# Regenerate after schema changes
-npm run db:generate
-npm run db:push
+All pages are fully responsive:
+- **Mobile** (<480px): Optimized vertical layout
+- **Tablet** (480-768px): Improved 2-column grids
+- **Desktop** (>768px): Full-width with enhanced spacing
 
-# View/edit data visually
-npm run db:studio
-```
+## 📞 Contact & Support
 
-## Documentation
+**NTKMA Contact Information:**
+- Phone: 0253-2461909
+- Email: kumbhmela.2027@mah.gov.in
+- Address: Office of the Divisional Commissioner, Nashik Division, Nashik Road, Nashik, Maharashtra
 
-- [QUICK_START.md](./QUICK_START.md) - Quick setup guide
-- [ADMIN_SETUP.md](./ADMIN_SETUP.md) - Admin panel setup
-- [SECURITY.md](./SECURITY.md) - Security implementation details
+**Emergency Services:**
+- Police: 100
+- Ambulance: 108
+- Fire: 101
 
-## Production Deployment
+## 📄 License
 
-1. Set environment variables
-2. Use PostgreSQL for production database
-3. Run database migrations
-4. Build application: `npm run build`
-5. Start server: `npm start`
+Developed for Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA)
 
-### Environment Variables for Production
+## 🙏 Acknowledgments
 
-```env
-DATABASE_URL="postgresql://user:password@host:5432/kumbh_mela"
-ADMIN_USERNAME="admin"
-ADMIN_PASSWORD="<strong-password>"
-NODE_ENV="production"
-```
-
-## Support
-
-For issues or questions, refer to:
-- Database schema in `prisma/schema.prisma`
-- API routes in `app/api/`
-- Component documentation in respective files
+- Nashik–Trimbakeshwar Kumbh Mela Authority
+- Office of the Divisional Commissioner, Nashik Division
+- All volunteers and team members
 
 ---
 
-Built for: Kumbh Mela 2027 Volunteer Management  
-Focus: Professional, accessible, high-performance government application
+**Latest Update**: January 4, 2026
+- ✅ Volunteer form UI improvement
+- ✅ New Authorities page with member directory
+- ✅ Updated contact information
+- ✅ Fixed news delete bug
+- ✅ Improved mobile responsiveness
