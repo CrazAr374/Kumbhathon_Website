@@ -1,7 +1,11 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useI18n } from '@/lib/i18n/context'
 
 export default function SiteFooter() {
+  const { t } = useI18n()
   return (
     <footer className="bg-amber-950 text-amber-50">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -21,19 +25,19 @@ export default function SiteFooter() {
             <div className="text-sm font-semibold tracking-wide text-amber-50/90">Quick links</div>
             <div className="mt-3 space-y-2 text-sm">
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/">
-                Home
+                {t('header.home')}
               </Link>
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/volunteer">
-                Register
+                {t('header.volunteer')}
               </Link>
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/about-us">
-                Information
+                {t('header.aboutUs')}
               </Link>
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/news-and-alerts">
-                News
+                {t('header.newsAlerts')}
               </Link>
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/admin/login">
-                Admin Login
+                {t('admin.login')}
               </Link>
             </div>
           </div>
@@ -58,7 +62,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-amber-50/15 pt-6 text-center text-xs text-amber-50/70">
-          © 2027 Nashik Kumbh Mela Authority. All rights reserved.
+          {t('footer.copyright')}
         </div>
       </div>
     </footer>

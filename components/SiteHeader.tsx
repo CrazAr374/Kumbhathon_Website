@@ -1,11 +1,14 @@
-"use client"
+'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { useI18n } from '@/lib/i18n/context'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const { t } = useI18n()
 
   // Close menu on hash-route changes (basic UX for anchor links)
   useEffect(() => {
@@ -39,26 +42,27 @@ export default function SiteHeader() {
 
           <nav className="hidden items-center gap-8 text-sm text-stone-700 sm:flex">
             <Link href="/" className="hover:text-orange-700">
-              Home
+              {t('header.home')}
             </Link>
             <Link href="/about-us" className="hover:text-orange-700">
-              About us
+              {t('header.aboutUs')}
             </Link>
             <Link href="/news-and-alerts" className="hover:text-orange-700">
-              News &amp; Alerts
+              {t('header.newsAlerts')}
             </Link>
             <Link href="/authorities" className="hover:text-orange-700">
-              Authorities
+              {t('header.authorities')}
             </Link>
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden sm:block">
+          {/* Desktop controls */}
+          <div className="hidden items-center gap-4 sm:flex">
+            <LanguageSwitcher />
             <Link
               href="/volunteer"
               className="inline-flex items-center rounded-full bg-orange-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
             >
-              Volunteer Now
+              {t('header.volunteer')}
             </Link>
           </div>
 
@@ -98,38 +102,39 @@ export default function SiteHeader() {
                   href="/"
                   onClick={() => setOpen(false)}
                 >
-                  Home
+                  {t('header.home')}
                 </Link>
                 <Link
                   className="block rounded-lg px-3 py-2 font-medium hover:bg-orange-50 hover:text-orange-700 transition-colors"
                   href="/about-us"
                   onClick={() => setOpen(false)}
                 >
-                  About us
+                  {t('header.aboutUs')}
                 </Link>
                 <Link
                   className="block rounded-lg px-3 py-2 font-medium hover:bg-orange-50 hover:text-orange-700 transition-colors"
                   href="/news-and-alerts"
                   onClick={() => setOpen(false)}
                 >
-                  News &amp; Alerts
+                  {t('header.newsAlerts')}
                 </Link>
                 <Link
                   className="block rounded-lg px-3 py-2 font-medium hover:bg-orange-50 hover:text-orange-700 transition-colors"
                   href="/authorities"
                   onClick={() => setOpen(false)}
                 >
-                  Authorities
+                  {t('header.authorities')}
                 </Link>
               </div>
 
-              <div className="mt-2 pt-2 border-t border-amber-200/40">
+              <div className="mt-3 pt-3 border-t border-amber-200/40 space-y-3">
+                <LanguageSwitcher />
                 <Link
                   href="/volunteer"
                   className="inline-flex w-full items-center justify-center rounded-full bg-orange-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 transition-colors"
                   onClick={() => setOpen(false)}
                 >
-                  Volunteer Now
+                  {t('header.volunteer')}
                 </Link>
               </div>
             </div>

@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
+import { useI18n } from '@/lib/i18n/context'
 import './volunteer.css'
 
 export default function VolunteerRegistration() {
+  const { t } = useI18n()
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -96,7 +98,8 @@ export default function VolunteerRegistration() {
       <div className="volunteer-hero" style={{ backgroundImage: "url('/Home_bg.png')" }}>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1>Volunteer Registration</h1>
+          <h1>{t('volunteer.title')}</h1>
+          <p>{t('volunteer.subtitle')}</p>
         </div>
       </div>
 
@@ -107,7 +110,7 @@ export default function VolunteerRegistration() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
               </svg>
-              <span>Registration successful! Thank you for volunteering.</span>
+              <span>{t('volunteer.success')}</span>
             </div>
           )}
 
@@ -126,7 +129,7 @@ export default function VolunteerRegistration() {
               <h2>Basic Details</h2>
               <div className="form-grid">
                 <div className="form-field">
-                  <label htmlFor="fullName">Full Name <span className="required">*</span></label>
+                  <label htmlFor="fullName">{t('volunteer.fullName')} <span className="required">*</span></label>
                   <input
                     id="fullName"
                     name="fullName"
@@ -139,7 +142,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="mobileNumber">Mobile Number <span className="required">*</span></label>
+                  <label htmlFor="mobileNumber">{t('volunteer.mobileNumber')} <span className="required">*</span></label>
                   <input
                     id="mobileNumber"
                     name="mobileNumber"
@@ -153,7 +156,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field full-width">
-                  <label htmlFor="email">Email <span className="required">*</span></label>
+                  <label htmlFor="email">{t('volunteer.email')} <span className="required">*</span></label>
                   <input
                     id="email"
                     name="email"
@@ -172,7 +175,7 @@ export default function VolunteerRegistration() {
               <h2>Availability</h2>
               <div className="form-grid">
                 <div className="form-field">
-                  <label htmlFor="availableFrom">Available From <span className="required">*</span></label>
+                  <label htmlFor="availableFrom">{t('volunteer.availableFrom')} <span className="required">*</span></label>
                   <input
                     id="availableFrom"
                     name="availableFrom"
@@ -184,7 +187,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="availableTo">Available To <span className="required">*</span></label>
+                  <label htmlFor="availableTo">{t('volunteer.availableTo')} <span className="required">*</span></label>
                   <input
                     id="availableTo"
                     name="availableTo"
@@ -196,7 +199,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field full-width">
-                  <label htmlFor="preferredShift">Preferred Shift <span className="required">*</span></label>
+                  <label htmlFor="preferredShift">{t('volunteer.preferredShift')} <span className="required">*</span></label>
                   <select
                     id="preferredShift"
                     name="preferredShift"
@@ -205,10 +208,10 @@ export default function VolunteerRegistration() {
                     onChange={handleChange}
                   >
                     <option value="">Select shift</option>
-                    <option value="Morning (6 AM - 12 PM)">Morning (6 AM - 12 PM)</option>
-                    <option value="Afternoon (12 PM - 6 PM)">Afternoon (12 PM - 6 PM)</option>
-                    <option value="Evening (6 PM - 12 AM)">Evening (6 PM - 12 AM)</option>
-                    <option value="Night (12 AM - 6 AM)">Night (12 AM - 6 AM)</option>
+                    <option value="Morning (6 AM - 12 PM)">{t('volunteer.morning')}</option>
+                    <option value="Afternoon (12 PM - 6 PM)">{t('volunteer.afternoon')}</option>
+                    <option value="Evening (6 PM - 12 AM)">{t('volunteer.evening')}</option>
+                    <option value="Night (12 AM - 6 AM)">{t('volunteer.night')}</option>
                     <option value="Flexible">Flexible</option>
                   </select>
                 </div>
@@ -220,7 +223,7 @@ export default function VolunteerRegistration() {
               <h2>Skills & Preferences</h2>
               <div className="form-grid">
                 <div className="form-field full-width">
-                  <label htmlFor="skills">Skills / Background <span className="required">*</span></label>
+                  <label htmlFor="skills">{t('volunteer.skills')} <span className="required">*</span></label>
                   <textarea
                     id="skills"
                     name="skills"
@@ -233,7 +236,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="preferredRole">Preferred Role <span className="required">*</span></label>
+                  <label htmlFor="preferredRole">{t('volunteer.preferredRole')} <span className="required">*</span></label>
                   <select
                     id="preferredRole"
                     name="preferredRole"
@@ -256,7 +259,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="languagesKnown">Languages Known <span className="required">*</span></label>
+                  <label htmlFor="languagesKnown">{t('volunteer.languagesKnown')} <span className="required">*</span></label>
                   <input
                     id="languagesKnown"
                     name="languagesKnown"
@@ -275,7 +278,7 @@ export default function VolunteerRegistration() {
               <h2>Local Context</h2>
               <div className="form-grid">
                 <div className="form-field">
-                  <label htmlFor="isLocalResident">Local resident of Nashik? <span className="required">*</span></label>
+                  <label htmlFor="isLocalResident">{t('volunteer.isLocalResident')} <span className="required">*</span></label>
                   <select
                     id="isLocalResident"
                     name="isLocalResident"
@@ -284,13 +287,13 @@ export default function VolunteerRegistration() {
                     onChange={handleChange}
                   >
                     <option value="">Select</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="yes">{t('volunteer.yes')}</option>
+                    <option value="no">{t('volunteer.no')}</option>
                   </select>
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="area">Area (Optional)</label>
+                  <label htmlFor="area">{t('volunteer.area')} (Optional)</label>
                   <input
                     id="area"
                     name="area"
@@ -308,7 +311,7 @@ export default function VolunteerRegistration() {
               <h2>Safety (Optional)</h2>
               <div className="form-grid">
                 <div className="form-field">
-                  <label htmlFor="emergencyContactName">Emergency Contact Name</label>
+                  <label htmlFor="emergencyContactName">{t('volunteer.emergencyContactName')}</label>
                   <input
                     id="emergencyContactName"
                     name="emergencyContactName"
@@ -320,7 +323,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="emergencyContactNumber">Emergency Contact Number</label>
+                  <label htmlFor="emergencyContactNumber">{t('volunteer.emergencyContactNumber')}</label>
                   <input
                     id="emergencyContactNumber"
                     name="emergencyContactNumber"
@@ -333,7 +336,7 @@ export default function VolunteerRegistration() {
                 </div>
 
                 <div className="form-field full-width">
-                  <label htmlFor="medicalCondition">Medical Condition (Optional)</label>
+                  <label htmlFor="medicalCondition">{t('volunteer.medicalCondition')} (Optional)</label>
                   <textarea
                     id="medicalCondition"
                     name="medicalCondition"
@@ -359,7 +362,7 @@ export default function VolunteerRegistration() {
                     onChange={handleChange}
                   />
                   <span>
-                    I hereby confirm that all information provided is accurate and I voluntarily consent to participate as a volunteer for Kumbh Mela 2027. <span className="required">*</span>
+                    {t('volunteer.consent')} <span className="required">*</span>
                   </span>
                 </label>
               </div>
@@ -367,7 +370,7 @@ export default function VolunteerRegistration() {
 
             <div className="form-actions">
               <button type="submit" disabled={loading} className="submit-btn">
-                {loading ? 'Submitting...' : 'Submit Registration'}
+                {loading ? 'Submitting...' : t('volunteer.submit')}
               </button>
             </div>
           </form>

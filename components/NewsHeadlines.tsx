@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useI18n } from '@/lib/i18n/context'
 
 interface NewsItem {
   id: string
@@ -11,6 +12,7 @@ interface NewsItem {
 }
 
 export default function NewsHeadlines() {
+  const { t } = useI18n()
   const [news, setNews] = useState<NewsItem[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -49,7 +51,7 @@ export default function NewsHeadlines() {
         {/* Header */}
         <div className="mb-10">
           <h2 className="text-3xl font-black text-stone-900 mb-2">
-            News & Alerts
+            {t('news.title')}
           </h2>
           <p className="text-stone-600">
             Stay connected with the latest updates from the administration

@@ -2,8 +2,10 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useI18n } from '@/lib/i18n/context'
 
 export default function AboutUsSection() {
+  const { t } = useI18n()
   return (
     <section className="bg-cover bg-center bg-fixed py-16 md:py-24 relative" style={{ backgroundImage: "url('/bg_about.png')" }}>
       {/* Overlay */}
@@ -13,10 +15,10 @@ export default function AboutUsSection() {
         {/* Header */}
         <div className="mb-16 text-center">
           <h1 className="text-5xl md:text-6xl font-black text-stone-900 mb-3">
-            Information & Guidelines
+            {t('aboutUs.title')}
           </h1>
           <p className="text-lg text-stone-600">
-            Everything you need to know about serving at the Kumbh Mela
+            {t('aboutUs.subtitle')}
           </p>
         </div>
 
@@ -26,44 +28,44 @@ export default function AboutUsSection() {
           <div className="lg:col-span-2 space-y-8">
             {/* The Spirit of Seva */}
             <div className="bg-white rounded-xl border-2 border-orange-200 p-8 shadow-sm">
-              <h2 className="text-2xl font-black text-orange-700 mb-4">The Spirit of Seva</h2>
+              <h2 className="text-2xl font-black text-orange-700 mb-4">{t('aboutUs.sevaTitle')}</h2>
               <p className="text-stone-700 leading-relaxed">
-                Volunteering at the Kumbh Mela is more than just a duty. It is an act of spiritual service and compassion. As a volunteer, you become a vital part of ensuring that every visitor has a memorable, safe, and spiritually enriching experience. Together, we ensure their safety, comfort, and spiritual experience is seamless.
+                {t('aboutUs.sevaDescription')}
               </p>
               <p className="text-stone-600 text-sm mt-4 italic">
-                Volunteers are the backbone of the spiritual events, bridging the gap between the administration and the devotees.
+                {t('aboutUs.sevaQuote')}
               </p>
             </div>
 
             {/* Roles & Responsibilities */}
             <div className="bg-white rounded-xl border border-stone-200 p-8 shadow-sm">
-              <h2 className="text-2xl font-black text-stone-900 mb-6">Roles & Responsibilities</h2>
+              <h2 className="text-2xl font-black text-stone-900 mb-6">{t('aboutUs.rolesTitle')}</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-2">Crowd Management</h3>
+                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.crowdMgmtTitle')}</h3>
                   <p className="text-stone-600 text-sm">
-                    Direct visitors, prevent overcrowding at ghats and temples, and ensure orderly queues during peak times.
+                    {t('aboutUs.crowdMgmtDesc')}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-2">Information Guides</h3>
+                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.infoGuideTitle')}</h3>
                   <p className="text-stone-600 text-sm">
-                    Assist visitors with directions, schedules, and arrange handicap assistance to ensure comfortable navigation.
+                    {t('aboutUs.infoGuideDesc')}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-2">Medical Assistance</h3>
+                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.medicalTitle')}</h3>
                   <p className="text-stone-600 text-sm">
-                    First responder support and coordinating with ambulances to ensure medical emergencies are handled efficiently.
+                    {t('aboutUs.medicalDesc')}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-2">Sanitation Cleaners</h3>
+                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.sanitationTitle')}</h3>
                   <p className="text-stone-600 text-sm">
-                    Ensuring the holy grounds remain clean and public facilities are hygienic throughout the event.
+                    {t('aboutUs.sanitationDesc')}
                   </p>
                 </div>
               </div>
@@ -71,30 +73,30 @@ export default function AboutUsSection() {
 
             {/* Common FAQs */}
             <div className="bg-white rounded-xl border border-stone-200 p-8 shadow-sm">
-              <h2 className="text-2xl font-black text-stone-900 mb-6">Common FAQs</h2>
+              <h2 className="text-2xl font-black text-stone-900 mb-6">{t('aboutUs.faqTitle')}</h2>
               
               <div className="space-y-6">
                 {/* FAQ 1 */}
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-2">Is accommodation provided?</h3>
+                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.faq1Q')}</h3>
                   <p className="text-stone-600 text-sm">
-                    Yes. Basic dormitory-style accommodation and meals (Sarak Bhangi) are provided to all volunteers in designated areas. Hot meals, water, and rest facilities are available throughout your shift.
+                    {t('aboutUs.faq1A')}
                   </p>
                 </div>
 
                 {/* FAQ 2 */}
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-2">What is the minimum age?</h3>
+                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.faq2Q')}</h3>
                   <p className="text-stone-600 text-sm">
-                    Volunteers must be at least 18 years of age. Special youth batches (17+) are available with parental consent.
+                    {t('aboutUs.faq2A')}
                   </p>
                 </div>
 
                 {/* FAQ 3 */}
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-2">Will I get a certificate?</h3>
+                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.faq3Q')}</h3>
                   <p className="text-stone-600 text-sm">
-                    Yes. All volunteers that assigned leisure will receive an official certificate of service recognizing your contribution to the Mela.
+                    {t('aboutUs.faq3A')}
                   </p>
                 </div>
 
